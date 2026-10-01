@@ -60,8 +60,8 @@ export const products = [
     color: "from-amber-500 to-orange-400"
   },
   {
-    id: "fiesta",
-    code: "FIESTA",
+    id: "flex",
+    code: "FLEX",
     name: "Enterprise Travel Accounting Suite",
     category: "Travel & Logistics",
     badge: "Industry Leader",
@@ -235,7 +235,7 @@ export const products = [
 
 export const industries = [
   { id: "all", name: "All Sectors" },
-  { id: "travel", name: "Travel & Tourism", count: "120+ Agencies", featured: "FIESTA, FIRST", desc: "Automated GDS reconciliation, ticket mid-office, sub-agent credit management, and multi-currency billing." },
+  { id: "travel", name: "Travel & Tourism", count: "120+ Agencies", featured: "FLEX, FIRST", desc: "Automated GDS reconciliation, ticket mid-office, sub-agent credit management, and multi-currency billing." },
   { id: "restaurant", name: "Hospitality & Dining", count: "350+ Venues", featured: "R-POS RESTO, FIIMS", desc: "Kitchen display terminals, table management, recipe costing, and ultra-fast touch ordering." },
   { id: "manufacturing", name: "Industrial & Manufacturing", count: "90+ Plants", featured: "ATOMS, FIIMS", desc: "Raw material tracking, bill of materials (BOM), shop-floor routing, and equipment maintenance." },
   { id: "healthcare", name: "Healthcare & Clinics", count: "140+ Facilities", featured: "FORCE, EDMS", desc: "Digital clinical records, doctor appointment scheduling, pharmacy dispensing, and insurance claims." },

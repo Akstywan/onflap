@@ -54,7 +54,7 @@ export default function InteractiveCalculator({ onOpenDemo }) {
                   >
                     <option value="retail">Retail & Multi-Branch Commerce</option>
                     <option value="hospitality">Restaurants & Hospitality (R-POS)</option>
-                    <option value="travel">Travel & Tourism Accounting (FIESTA)</option>
+                    <option value="travel">Travel & Tourism Accounting (FLEX)</option>
                     <option value="healthcare">Healthcare & Clinical Records (FORCE)</option>
                     <option value="enterprise">Corporate Office & BPO (ATOMS)</option>
                   </select>

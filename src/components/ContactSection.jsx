@@ -231,7 +231,7 @@ export default function ContactSection() {
                         <option value="R-POS Resto">R-POS RESTO (Hospitality)</option>
                         <option value="R-POS Retail">R-POS RETAIL (Supermarket)</option>
                         <option value="CORE">CORE (CRM & Operations)</option>
-                        <option value="FIESTA">FIESTA (Travel Accounting)</option>
+                        <option value="FLEX">FLEX (Travel Accounting)</option>
                         <option value="ATOMS">ATOMS (Complete Enterprise ERP)</option>
                         <option value="FORCE">FORCE (Clinical & Hospital)</option>
                         <option value="HRMS">HRMS (HR & Payroll)</option>

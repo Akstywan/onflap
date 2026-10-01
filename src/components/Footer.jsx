@@ -69,7 +69,7 @@ export default function Footer({ onOpenDemo }) {
               <li><a href="#flagships" className="hover:text-red-400 transition-colors">FIRST (Financial Reporting)</a></li>
               <li><a href="#flagships" className="hover:text-red-400 transition-colors">R-POS Resto & Retail</a></li>
               <li><a href="#flagships" className="hover:text-red-400 transition-colors">CORE (CRM Operations)</a></li>
-              <li><a href="#flagships" className="hover:text-red-400 transition-colors">FIESTA (Travel Accounting)</a></li>
+              <li><a href="#flagships" className="hover:text-red-400 transition-colors">FLEX (Travel Accounting)</a></li>
               <li><a href="#products" className="hover:text-red-400 transition-colors">ATOMS (Office ERP)</a></li>
               <li><a href="#products" className="hover:text-red-400 transition-colors">FORCE (Hospital Care)</a></li>
               <li><a href="#products" className="hover:text-red-400 transition-colors">HRMS & Payroll</a></li>

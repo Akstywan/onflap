@@ -36,7 +36,7 @@ export default function App() {
         onOpenVideo={() => setVideoOpen(true)} 
       />
 
-      {/* Flagship Product Deep Dive (FIRST, R-POS, CORE, FIESTA) */}
+      {/* Flagship Product Deep Dive (FIRST, R-POS, CORE, FLEX) */}
       <FlagshipShowcase 
         onSelectProduct={(id) => setSelectedProductId(id)} 
       />

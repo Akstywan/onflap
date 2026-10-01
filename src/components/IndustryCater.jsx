@@ -41,7 +41,7 @@ const industryDetails = {
   },
   travel: {
     title: "Travel & Tourism Technology Infrastructure",
-    sub: "Pioneered by FIESTA: The premier travel accounting and mid-office suite.",
+    sub: "Pioneered by FLEX: The premier travel accounting and mid-office suite.",
     stats: "12M+ Annual Bookings Automated",
     workflows: [
       "Real-time GDS ticket reconciliation (Sabre, Amadeus, Travelport)",

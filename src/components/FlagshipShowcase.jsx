@@ -81,8 +81,8 @@ export default function FlagshipShowcase({ onSelectProduct }) {
       ]
     },
     {
-      id: "fiesta",
-      code: "FIESTA",
+      id: "flex",
+      code: "FLEX",
       name: "Enterprise Travel Accounting Suite",
       icon: Compass,
       tagline: "Flagship Premier Suite for Global Travel & Tourism",
@@ -308,7 +308,7 @@ export default function FlagshipShowcase({ onSelectProduct }) {
                     </div>
                   )}
 
-                  {current.id === 'fiesta' && (
+                  {current.id === 'flex' && (
                     <div className="space-y-3 text-xs">
                       <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 font-mono space-y-1">
                         <div className="flex justify-between">
