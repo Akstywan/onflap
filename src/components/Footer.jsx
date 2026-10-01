@@ -1,11 +1,7 @@
 import React from 'react';
 import { 
   ArrowUp, 
-  Mail, 
-  Phone, 
-  MapPin, 
   ShieldCheck, 
-  Globe2, 
   Sparkles 
 } from 'lucide-react';
 
@@ -15,10 +11,10 @@ export default function Footer({ onOpenDemo }) {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 text-xs">
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 text-xs">
       
       {/* Top CTA Band */}
-      <div className="border-b border-slate-900 bg-gradient-to-r from-blue-950/30 via-slate-950 to-cyan-950/30 py-12">
+      <div className="border-b border-slate-800 bg-slate-950 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl font-extrabold text-white">
@@ -31,7 +27,7 @@ export default function Footer({ onOpenDemo }) {
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenDemo}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-[#b71919] hover:bg-[#991313] text-white font-semibold shadow-lg shadow-red-900/30 transition-all flex items-center gap-2"
             >
               <Sparkles className="w-4 h-4" />
               <span>Schedule Architecture Review</span>
@@ -44,25 +40,21 @@ export default function Footer({ onOpenDemo }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           
-          {/* Brand Col */}
+          {/* Brand Col with Genuine Logo White Variant */}
           <div className="col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 p-[1px]">
-                <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center font-mono font-extrabold text-cyan-400 text-lg">
-                  OF
-                </div>
-              </div>
-              <div>
-                <span className="text-xl font-black text-white tracking-tight">ONFLAP</span>
-                <span className="block text-[10px] text-slate-500 font-mono tracking-wider">TECHNOLOGIES</span>
-              </div>
+              <img 
+                src="/onflap-logo-white.png" 
+                alt="ONFLAP Technologies" 
+                className="h-10 w-auto object-contain" 
+              />
             </div>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               Established with the specific aim of empowering the IT industry through powerful, cost-effective, and scalable enterprise software solutions. Operating across Canada, India, and Kuwait.
             </p>
 
-            <div className="flex items-center gap-2 font-mono text-[11px] text-slate-500">
+            <div className="flex items-center gap-2 font-mono text-[11px] text-slate-400">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span>ISO 9001 & 27001 Aligned • GST/VAT Standardized</span>
             </div>
@@ -74,13 +66,13 @@ export default function Footer({ onOpenDemo }) {
               Flagship Products
             </h4>
             <ul className="space-y-2">
-              <li><a href="#flagships" className="hover:text-cyan-400 transition-colors">FIRST (Financial Reporting)</a></li>
-              <li><a href="#flagships" className="hover:text-cyan-400 transition-colors">R-POS Resto & Retail</a></li>
-              <li><a href="#flagships" className="hover:text-cyan-400 transition-colors">CORE (CRM Operations)</a></li>
-              <li><a href="#flagships" className="hover:text-cyan-400 transition-colors">FIESTA (Travel Accounting)</a></li>
-              <li><a href="#products" className="hover:text-cyan-400 transition-colors">ATOMS (Office ERP)</a></li>
-              <li><a href="#products" className="hover:text-cyan-400 transition-colors">FORCE (Hospital Care)</a></li>
-              <li><a href="#products" className="hover:text-cyan-400 transition-colors">HRMS & Payroll</a></li>
+              <li><a href="#flagships" className="hover:text-red-400 transition-colors">FIRST (Financial Reporting)</a></li>
+              <li><a href="#flagships" className="hover:text-red-400 transition-colors">R-POS Resto & Retail</a></li>
+              <li><a href="#flagships" className="hover:text-red-400 transition-colors">CORE (CRM Operations)</a></li>
+              <li><a href="#flagships" className="hover:text-red-400 transition-colors">FIESTA (Travel Accounting)</a></li>
+              <li><a href="#products" className="hover:text-red-400 transition-colors">ATOMS (Office ERP)</a></li>
+              <li><a href="#products" className="hover:text-red-400 transition-colors">FORCE (Hospital Care)</a></li>
+              <li><a href="#products" className="hover:text-red-400 transition-colors">HRMS & Payroll</a></li>
             </ul>
           </div>
 
@@ -90,12 +82,12 @@ export default function Footer({ onOpenDemo }) {
               Enterprise Services
             </h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">ASP.NET Core ERP Systems</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Bespoke Software Dev</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">iOS & Android Mobile Apps</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Networking & Cybersecurity</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Penetration Testing & Audits</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">POS & Server Hardware</a></li>
+              <li><a href="#services" className="hover:text-red-400 transition-colors">ASP.NET Core ERP Systems</a></li>
+              <li><a href="#services" className="hover:text-red-400 transition-colors">Bespoke Software Dev</a></li>
+              <li><a href="#services" className="hover:text-red-400 transition-colors">iOS & Android Mobile Apps</a></li>
+              <li><a href="#services" className="hover:text-red-400 transition-colors">Networking & Cybersecurity</a></li>
+              <li><a href="#services" className="hover:text-red-400 transition-colors">Penetration Testing & Audits</a></li>
+              <li><a href="#services" className="hover:text-red-400 transition-colors">POS & Server Hardware</a></li>
             </ul>
           </div>
 
@@ -106,15 +98,15 @@ export default function Footer({ onOpenDemo }) {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <strong className="text-slate-300 block">Canada:</strong>
+                <strong className="text-slate-200 block">Canada:</strong>
                 <span>Toronto, ON M1H 3E3</span>
               </li>
               <li>
-                <strong className="text-slate-300 block">India:</strong>
+                <strong className="text-slate-200 block">India:</strong>
                 <span>Angamaly, Kochi, Kerala</span>
               </li>
               <li>
-                <strong className="text-slate-300 block">Kuwait:</strong>
+                <strong className="text-slate-200 block">Kuwait:</strong>
                 <span>Fahaheel, Mekka Street</span>
               </li>
             </ul>
@@ -123,14 +115,14 @@ export default function Footer({ onOpenDemo }) {
         </div>
 
         {/* Bottom copyright & back to top */}
-        <div className="mt-16 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] text-slate-500">
             © {new Date().getFullYear()} ONFLAP Technologies. All Rights Reserved. Engineered with international enterprise standards.
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 transition-colors group"
+            className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-400 transition-colors group"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />

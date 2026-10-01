@@ -11,9 +11,7 @@ import {
   Dumbbell, 
   Briefcase,
   CheckCircle,
-  ArrowRight,
-  TrendingUp,
-  Cpu
+  ArrowRight
 } from 'lucide-react';
 
 const industryIcons = {
@@ -146,18 +144,18 @@ export default function IndustryCater({ onSelectProduct }) {
   const currentIndustryObj = industries.find(i => i.id === selectedIndustry) || industries[0];
 
   return (
-    <section id="industries" className="py-24 relative bg-slate-950/70 border-t border-slate-900">
+    <section id="industries" className="py-24 relative bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-800/40 text-cyan-400 text-xs font-mono font-medium">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-[#b71919] text-xs font-mono font-bold">
             <Building2 className="w-3.5 h-3.5" /> WE CATER TO
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Tailored Industry Solutions
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg">
             Every sector has unique compliance, inventory, and customer workflows. Discover how ONFLAP adapts specifically to your industry.
           </p>
         </div>
@@ -173,14 +171,14 @@ export default function IndustryCater({ onSelectProduct }) {
                 onClick={() => setSelectedIndustry(ind.id)}
                 className={`p-3 rounded-xl flex flex-col items-center justify-center gap-2 text-center transition-all duration-200 border ${
                   isSelected
-                    ? 'bg-gradient-to-b from-cyan-950 to-slate-900 border-cyan-500 text-white shadow-lg shadow-cyan-500/10'
-                    : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-850'
+                    ? 'bg-[#b71919] border-[#b71919] text-white shadow-md shadow-red-900/15'
+                    : 'bg-white border-slate-200 text-slate-700 hover:text-[#b71919] hover:bg-slate-100 shadow-sm'
                 }`}
               >
-                <div className={`p-2 rounded-lg ${isSelected ? 'bg-cyan-500 text-slate-950' : 'bg-slate-800 text-slate-300'}`}>
+                <div className={`p-2 rounded-lg ${isSelected ? 'bg-red-800 text-white' : 'bg-slate-100 text-slate-600'}`}>
                   <Icon className="w-4 h-4" />
                 </div>
-                <span className="text-xs font-medium tracking-tight">
+                <span className="text-xs font-bold tracking-tight">
                   {ind.name.split(' ')[0]}
                 </span>
               </button>
@@ -189,46 +187,46 @@ export default function IndustryCater({ onSelectProduct }) {
         </div>
 
         {/* Industry Feature Spotlight Panel */}
-        <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-12 shadow-xl relative overflow-hidden">
           
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50 text-xs font-mono font-semibold">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="px-3 py-1 rounded bg-red-50 text-[#b71919] border border-red-200 text-xs font-mono font-bold">
                   {currentInfo.stats}
                 </span>
                 {currentIndustryObj.featured && (
-                  <span className="text-xs text-slate-400">
-                    Recommended Modules: <span className="text-cyan-400 font-bold">{currentIndustryObj.featured}</span>
+                  <span className="text-xs text-slate-600 font-medium">
+                    Recommended Modules: <span className="text-[#b71919] font-bold">{currentIndustryObj.featured}</span>
                   </span>
                 )}
               </div>
 
               <div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                   {currentInfo.title}
                 </h3>
-                <p className="text-cyan-400 text-sm font-medium mt-1">
+                <p className="text-[#b71919] text-sm font-semibold mt-1">
                   {currentInfo.sub}
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 text-sm text-slate-300 italic">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-700 italic">
                 "{currentInfo.highlight}"
               </div>
 
               {/* Workflows */}
               <div className="space-y-3">
-                <p className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                <p className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold">
                   Key Tailored Workflows:
                 </p>
                 <div className="space-y-2">
                   {currentInfo.workflows.map((wf, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-200">
-                      <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{wf}</span>
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle className="w-4 h-4 text-[#b71919] shrink-0 mt-0.5" />
+                      <span className="font-medium">{wf}</span>
                     </div>
                   ))}
                 </div>
@@ -237,7 +235,7 @@ export default function IndustryCater({ onSelectProduct }) {
               <div className="pt-2">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition-all shadow-md shadow-cyan-600/30"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#b71919] hover:bg-[#991313] text-white font-semibold text-sm transition-all shadow-md shadow-red-900/15"
                 >
                   <span>Request an Industry-Specific Blueprint</span>
                   <ArrowRight className="w-4 h-4" />
@@ -247,35 +245,35 @@ export default function IndustryCater({ onSelectProduct }) {
 
             {/* Right: Modern Diagram / Workflow Visualization */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl bg-slate-950 border border-slate-800 p-6 space-y-4">
+              <div className="rounded-2xl bg-slate-900 text-slate-100 border border-slate-800 p-6 space-y-4 shadow-lg">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono">
-                  <span className="text-cyan-400 font-semibold uppercase">Operational Flow</span>
-                  <span className="text-slate-500">REAL-TIME</span>
+                  <span className="text-red-400 font-semibold uppercase">Operational Flow</span>
+                  <span className="text-slate-400">REAL-TIME</span>
                 </div>
 
                 <div className="space-y-3 font-mono text-xs">
-                  <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                  <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                     <span className="text-slate-400">1. Customer Ingestion</span>
                     <span className="text-emerald-400 font-semibold">Instant Web/POS</span>
                   </div>
                   <div className="flex justify-center -my-1 text-slate-600 text-xs">↓</div>
-                  <div className="p-3 rounded-xl bg-cyan-950/40 border border-cyan-800/50 flex items-center justify-between">
-                    <span className="text-cyan-300">2. Real-Time Processing</span>
-                    <span className="text-cyan-400 font-semibold">ASP.NET Core Engine</span>
+                  <div className="p-3 rounded-xl bg-red-950/60 border border-red-800/60 flex items-center justify-between">
+                    <span className="text-rose-200">2. Real-Time Processing</span>
+                    <span className="text-red-400 font-semibold">ASP.NET Core Engine</span>
                   </div>
                   <div className="flex justify-center -my-1 text-slate-600 text-xs">↓</div>
-                  <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                  <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                     <span className="text-slate-400">3. Ledger & Inventory Sync</span>
                     <span className="text-emerald-400 font-semibold">Zero Cross-Posting</span>
                   </div>
                   <div className="flex justify-center -my-1 text-slate-600 text-xs">↓</div>
-                  <div className="p-3 rounded-xl bg-indigo-950/40 border border-indigo-800/40 flex items-center justify-between">
-                    <span className="text-indigo-300">4. Executive BI Dashboard</span>
-                    <span className="text-indigo-400 font-semibold">Audit Compliant</span>
+                  <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+                    <span className="text-slate-400">4. Executive BI Dashboard</span>
+                    <span className="text-white font-semibold">Audit Compliant</span>
                   </div>
                 </div>
 
-                <div className="pt-2 text-[11px] text-slate-500 text-center font-mono">
+                <div className="pt-2 text-[11px] text-slate-400 text-center font-mono">
                   Guaranteed 99.98% Service Level Agreement
                 </div>
               </div>
