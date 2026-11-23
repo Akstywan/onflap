@@ -39,25 +39,29 @@ export const leadership = [
     name: "Anu Rosebell",
     role: "Co-Founder & Director",
     quote: "ONFLAP signifies how a set of people from different work backgrounds, tastes and opinions have come together to form this Soaring organization from scratch with the sole aim to provide the market with reliable, customizable & pocket friendly softwares to support your business ventures",
-    avatar: "/images/team/anu.png"
+    avatar: "/images/team/anu.png",
+    cardUrl: "/staff/anu.html"
   },
   {
     name: "Emitiyas N.M",
     role: "Co-Founder & Director",
     quote: "ONFLAP is where many dreams have come together with a single vision of enabling the future of businesses with tailored, affordable solutions. I am proud to be part of such a dedicated team of highly skilled professionals in this journey of success and inspiration, going forward from strength to strength every step of the way.",
-    avatar: "/images/team/emitiyas.png"
+    avatar: "/images/team/emitiyas.png",
+    cardUrl: "/staff/emitiyas.html"
   },
   {
     name: "Lijesh Paul",
     role: "Co-Founder & Director",
     quote: "Some people Dream of Success but other people get up Every Morning and make it Happen. ONFLAP has a Team of 'Other People' who make Dreams Happen",
-    avatar: "/images/team/lijesh.png"
+    avatar: "/images/team/lijesh.png",
+    cardUrl: "/staff/lijesh.html"
   },
   {
     name: "Ajil K.V",
     role: "Director & CEO",
     quote: "If you don’t build your dream, someone else will hire you to help them build theirs. In ONFLAP we are building our dream everyday and helping all ONFLAPians to acheive their dreams.",
-    avatar: "/images/team/ajil.png"
+    avatar: "/images/team/ajil.png",
+    cardUrl: "/staff/ajil.html"
   }
 ];
 
@@ -67,8 +71,6 @@ export const offices = [
     city: "Toronto",
     hub: "North American Headquarters",
     address: "100 Consilium Place - SUITE 200, Toronto ON M1H 3E3",
-    email: "canada@onflap.com",
-    phone: "+1 (416) 800-FLAP",
     timezone: "America/Toronto",
     mapUrl: "https://goo.gl/maps/bSdqMC3amHuhd2ug6",
     badge: "Global Tech Hub"
@@ -89,8 +91,6 @@ export const offices = [
     city: "Fahaheel (Kuwait City)",
     hub: "Middle East & GCC Regional Office",
     address: "Anoud Complex, Mekka Street, Fahaheel, Kuwait",
-    email: "gcc@onflap.com",
-    phone: "+965 2200 4400",
     timezone: "Asia/Kuwait",
     mapUrl: "https://goo.gl/maps/8yak39ubmBq47UTv5",
     badge: "GCC Headquarters"

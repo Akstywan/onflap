@@ -1,0 +1,18 @@
+/staff/ajil       /staff/ajil.html       200
+/staff/anu        /staff/anu.html        200
+/staff/emitiyas   /staff/emitiyas.html   200
+/staff/lijesh     /staff/lijesh.html     200
+
+/ajil             /staff/ajil.html       200
+/anu              /staff/anu.html        200
+/emitiyas         /staff/emitiyas.html   200
+/lijesh           /staff/lijesh.html     200
+
+/onflap/*         /staff/:splat          301
+
+/nfc              /nfc/index.html        200
+/nfc/             /nfc/index.html        200
+/kttc             /nfc/index.html        301
+/kttc/*           /nfc/:splat            301
+
+/*                /index.html            200

@@ -96,7 +96,7 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-800">
                 <PhoneCall className="w-4 h-4 text-[#b71919]" />
-                <span className="font-mono font-medium">+1 (416) 800-FLAP / +91 484 290 8800</span>
+                <span className="font-mono font-medium">+91 484 290 8800</span>
               </div>
             </div>
 

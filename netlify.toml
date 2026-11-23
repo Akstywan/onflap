@@ -2,6 +2,77 @@
   command = "npm run build"
   publish = "dist"
 
+# Clean URLs for Staff Profiles
+[[redirects]]
+  from = "/staff/ajil"
+  to = "/staff/ajil.html"
+  status = 200
+
+[[redirects]]
+  from = "/staff/anu"
+  to = "/staff/anu.html"
+  status = 200
+
+[[redirects]]
+  from = "/staff/emitiyas"
+  to = "/staff/emitiyas.html"
+  status = 200
+
+[[redirects]]
+  from = "/staff/lijesh"
+  to = "/staff/lijesh.html"
+  status = 200
+
+# Direct short aliases (e.g. onflap.com/ajil)
+[[redirects]]
+  from = "/ajil"
+  to = "/staff/ajil.html"
+  status = 200
+
+[[redirects]]
+  from = "/anu"
+  to = "/staff/anu.html"
+  status = 200
+
+[[redirects]]
+  from = "/emitiyas"
+  to = "/staff/emitiyas.html"
+  status = 200
+
+[[redirects]]
+  from = "/lijesh"
+  to = "/staff/lijesh.html"
+  status = 200
+
+# Compatibility with legacy /onflap/* paths
+[[redirects]]
+  from = "/onflap/*"
+  to = "/staff/:splat"
+  status = 301
+
+# NFC Landing Page
+[[redirects]]
+  from = "/nfc"
+  to = "/nfc/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nfc/"
+  to = "/nfc/index.html"
+  status = 200
+
+# Legacy compatibility for /kttc
+[[redirects]]
+  from = "/kttc"
+  to = "/nfc/index.html"
+  status = 301
+
+[[redirects]]
+  from = "/kttc/*"
+  to = "/nfc/:splat"
+  status = 301
+
+# Single Page Application fallback for main website
 [[redirects]]
   from = "/*"
   to = "/index.html"

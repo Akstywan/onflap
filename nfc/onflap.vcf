@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Onflap Technologies//NFC vCard//EN
+N:Technologies;Onflap;;;
+FN:Onflap Technologies
+ORG:Onflap Technologies
+TITLE:Enterprise Business Software & Solutions
+TEL;TYPE=WORK,VOICE:+916282307829
+TEL;TYPE=CELL,VOICE:+916282307829
+EMAIL;TYPE=PREF,INTERNET:info@onflap.com
+URL:https://www.onflap.com
+ADR;TYPE=WORK:;;Inkel Tower 2, IIIrd Floor, Angamaly South J1 A Business Park;Ernakulam;Kerala;683572;India
+NOTE:Flagship products: CORE, GLOBE, FIRST, FLEX. Connected business software for the Middle East and beyond.
+END:VCARD

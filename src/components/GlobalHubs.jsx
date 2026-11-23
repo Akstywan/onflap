@@ -98,17 +98,21 @@ export default function GlobalHubs() {
                     <span>{office.address}</span>
                   </div>
 
-                  <div className="flex items-center gap-2.5">
-                    <Mail className="w-4 h-4 text-[#b71919] shrink-0" />
-                    <a href={`mailto:${office.email}`} className="hover:text-[#b71919] font-medium transition-colors">
-                      {office.email}
-                    </a>
-                  </div>
+                  {office.email && (
+                    <div className="flex items-center gap-2.5">
+                      <Mail className="w-4 h-4 text-[#b71919] shrink-0" />
+                      <a href={`mailto:${office.email}`} className="hover:text-[#b71919] font-medium transition-colors">
+                        {office.email}
+                      </a>
+                    </div>
+                  )}
 
-                  <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-[#b71919] shrink-0" />
-                    <span className="font-mono font-medium">{office.phone}</span>
-                  </div>
+                  {office.phone && (
+                    <div className="flex items-center gap-2.5">
+                      <Phone className="w-4 h-4 text-[#b71919] shrink-0" />
+                      <span className="font-mono font-medium">{office.phone}</span>
+                    </div>
+                  )}
                 </div>
 
               </div>

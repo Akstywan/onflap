@@ -1,0 +1,797 @@
+/* style.css - Refined Tracom-style Profile Pages Stylesheet for Onflap */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Color Palette: Onflap brand colors mapped to Tracom's system */
+    --navy: #0B0B0B; /* Pitch Black */
+    --orange: #B31919; /* Onflap Crimson Red */
+    --primary-red-hover: #991616; /* Darker Crimson Red hover state */
+    --grey: #D2D6DC; /* Silver Grey */
+    --white: #FFFFFF;
+    --text-dark: #1A1A1A;
+    --text-muted: #666666;
+    
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: #F8FAFC; /* Premium Tracom off-white */
+    color: var(--text-dark);
+    min-height: 100vh;
+    position: relative;
+    transition: direction 0.4s cubic-bezier(0.16, 1, 0.3, 1), font-family 0.3s ease;
+}
+
+body.rtl-mode {
+    font-family: 'Cairo', var(--font-body);
+    direction: rtl;
+}
+
+.main-container,
+.profile-header,
+.about-card,
+.contact-list,
+.action-buttons-group,
+.photo-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                text-align 0.35s ease;
+}
+
+.lang-fading {
+    opacity: 0.15 !important;
+    transform: translateY(4px) scale(0.995);
+}
+
+.lang-toggle-wrap {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    transition: left 0.4s ease, right 0.4s ease;
+}
+
+body.rtl-mode .lang-toggle-wrap {
+    right: auto;
+    left: 1.5rem;
+}
+
+.btn-lang-toggle {
+    background: rgba(179, 25, 25, 0.1);
+    border: 1px solid rgba(179, 25, 25, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--orange);
+    padding: 0.55rem 1.25rem;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.btn-lang-toggle:hover {
+    background: var(--orange);
+    color: #FFFFFF;
+    border-color: var(--orange);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(179, 25, 25, 0.3);
+}
+
+.btn-lang-toggle i {
+    transition: transform 0.4s ease;
+}
+
+.btn-lang-toggle:hover i {
+    transform: rotate(30deg);
+}
+
+/* Desktop fit - clamp screen height */
+@media (min-width: 769px) {
+    body {
+        height: 100dvh;
+        overflow: hidden;
+    }
+}
+
+/* Page Background Decorations */
+.page-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Concentric Rings (High Opacity & Subtle Detail) */
+.decor-rings {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ring-group-1 {
+    top: -30px;
+    left: -30px;
+    width: 280px;
+    height: 280px;
+    opacity: 0.95;
+}
+
+.ring-group-2 {
+    top: -80px;
+    left: 48%;
+    width: 250px;
+    height: 250px;
+    opacity: 0.45;
+}
+
+.ring-group-3 {
+    top: 12%;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    opacity: 0.95;
+}
+
+.ring-group-4 {
+    top: 35%;
+    left: -80px;
+    width: 140px;
+    height: 140px;
+    opacity: 0.45;
+}
+
+.ring-group-5 {
+    top: 50%;
+    left: 42%;
+    width: 220px;
+    height: 220px;
+    opacity: 0.35;
+}
+
+.ring-group-6 {
+    bottom: 120px;
+    left: 40px;
+    width: 160px;
+    height: 160px;
+    opacity: 0.95;
+}
+
+.ring-group-7 {
+    bottom: 150px;
+    right: 50px;
+    width: 150px;
+    height: 150px;
+    opacity: 0.3;
+}
+
+/* Overlapping bottom waves */
+.page-bottom-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+}
+
+.page-bottom-waves svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Large Subtle Background Phoenix Watermark */
+.page-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    z-index: -2;
+    opacity: 0.02;
+    pointer-events: none;
+}
+
+/* Main Container Layout */
+.main-container {
+    display: grid;
+    max-width: 1050px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* ----------------------------------------------------
+   DESKTOP VIEW: Split Two-Column Layout (Tracoms Grid style)
+   ---------------------------------------------------- */
+@media (min-width: 769px) {
+    .main-container {
+        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 1.2rem 4rem;
+        height: 100dvh;
+        padding: 60px 20px 80px 20px;
+        align-items: center;
+        align-content: center;
+    }
+
+    .brand-logo-container {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-start;
+        height: 85px;
+        margin-bottom: 0.5rem;
+        animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .profile-header {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+        margin-bottom: 0.5rem;
+        animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .about-card {
+        grid-column: 1;
+        grid-row: 3;
+        margin-bottom: 0.5rem;
+        animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .contact-list {
+        grid-column: 1;
+        grid-row: 4;
+        margin-bottom: 0.5rem;
+        animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .action-buttons-group {
+        grid-column: 1;
+        grid-row: 5;
+        animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.rtl-mode .brand-logo-container {
+        justify-content: flex-start;
+    }
+
+    body.rtl-mode .profile-header {
+        text-align: right;
+    }
+
+    body.rtl-mode .about-card {
+        text-align: right;
+    }
+
+    /* Desktop Photo Card: Solid thick dark border, high shadow */
+    .photo-card {
+        grid-column: 2;
+        grid-row: 1 / span 5;
+        justify-self: center;
+        align-self: center;
+        width: 360px;
+        height: 480px;
+        border-radius: 24px;
+        border: 4px solid var(--navy);
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(11, 11, 11, 0.12);
+        position: relative;
+        z-index: 1;
+        background: #F1F5F9;
+        animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.4s ease;
+    }
+
+    .photo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(11, 11, 11, 0.18);
+    }
+
+    .brand-logo {
+        height: 85px;
+        width: auto;
+    }
+
+    .profile-name {
+        font-size: 3.6rem;
+        font-weight: 800;
+        color: var(--navy);
+        letter-spacing: -1px;
+    }
+
+    .profile-portrait {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* ----------------------------------------------------
+   SHARED STYLES FOR DIRECTORY CARDS & LISTS
+   ---------------------------------------------------- */
+.brand-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo-fallback {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 1.5px;
+}
+
+.brand-logo-fallback i {
+    color: var(--orange);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(11, 11, 11, 0.08);
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    max-width: 480px;
+    box-shadow: 0 10px 30px rgba(11, 11, 11, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.about-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    font-weight: 500;
+}
+
+/* Tracoms style contact list and rows */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    max-width: 480px;
+}
+
+a.contact-row, div.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none !important;
+    color: var(--navy) !important;
+    transition: all 0.25s ease;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 2px 0;
+}
+
+a.contact-row:hover {
+    transform: translateX(4px);
+    color: var(--orange) !important;
+}
+
+.contact-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(11, 11, 11, 0.05);
+    border: 1px solid rgba(11, 11, 11, 0.08);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(11, 11, 11, 0.02);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+a.contact-row:hover .contact-icon-box {
+    background: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+    box-shadow: 0 4px 10px rgba(179, 25, 25, 0.25);
+}
+
+.contact-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: inherit;
+}
+
+.action-buttons-group {
+    display: flex;
+    gap: 1.2rem;
+    max-width: 480px;
+    width: 100%;
+}
+
+.btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-save {
+    background: var(--orange);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(179, 25, 25, 0.2);
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(179, 25, 25, 0.35);
+    background: var(--primary-red-hover);
+}
+
+.btn-email {
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(11, 11, 11, 0.15);
+}
+
+.btn-email:hover {
+    transform: translateY(-2px);
+    background: #222222;
+    box-shadow: 0 12px 25px rgba(11, 11, 11, 0.3);
+}
+
+/* Placeholder Graphic when Photo is Missing */
+.photo-placeholder {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+    text-align: center;
+    padding: 2rem;
+    z-index: 0;
+}
+
+.photo-placeholder i {
+    font-size: 3.5rem;
+    color: rgba(11, 11, 11, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ----------------------------------------------------
+   MOBILE VIEW: Centered Single-Column Layout (Scroll-Free)
+   ---------------------------------------------------- */
+@media (max-width: 768px) {
+    body {
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 100dvh;
+        padding: 50px 20px 25px 20px;
+        max-width: 400px;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    /* Mobile stack ordering */
+    .brand-logo-container { order: 1; justify-content: center; width: 100%; margin-bottom: 2px; }
+    .profile-header { order: 2; text-align: center; width: 100%; margin-bottom: 2px; position: relative; z-index: 15; }
+    .photo-card { order: 3; width: 180px !important; height: 180px !important; border-radius: 50% !important; border: 4px solid var(--navy) !important; box-shadow: 0 8px 20px rgba(11, 11, 11, 0.1) !important; overflow: hidden; background: #EBEBEB; position: relative; z-index: 2; margin-bottom: 2px; }
+    .about-card { order: 4; text-align: left; width: 100%; padding: 12px 14px; border-radius: 12px; }
+    .contact-list { order: 5; width: 100%; gap: 0.5rem; align-items: flex-start; }
+    .action-buttons-group { order: 6; width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+
+    .brand-logo {
+        height: 60px;
+    }
+
+    .profile-name {
+        font-size: 30px;
+        font-weight: 800;
+        color: var(--navy);
+        letter-spacing: -0.5px;
+    }
+
+    .profile-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Mobile Profile photo: Transforms to a centered circle border */
+    .profile-portrait {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50% !important;
+    }
+
+    .about-card p {
+        font-size: 0.9rem;
+        line-height: 1.45;
+    }
+
+    body.rtl-mode .profile-header {
+        text-align: center;
+        width: 100%;
+    }
+
+    body.rtl-mode .profile-name {
+        text-align: center;
+        font-family: 'Cairo', sans-serif;
+        line-height: 1.35;
+        letter-spacing: normal;
+    }
+
+    body.rtl-mode .profile-title {
+        text-align: center;
+        font-family: 'Cairo', sans-serif;
+        line-height: 1.3;
+        letter-spacing: normal;
+    }
+
+    body.rtl-mode .about-card p {
+        text-align: right;
+    }
+
+    body.rtl-mode .contact-row {
+        justify-content: flex-start;
+    }
+
+    body.rtl-mode a.contact-row:hover {
+        transform: translateX(-4px);
+    }
+
+    a.contact-row, div.contact-row {
+        padding: 2px 0;
+        gap: 0.8rem;
+    }
+
+    .contact-icon-box {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    .contact-text {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.85rem 1.5rem;
+        font-size: 1.02rem;
+        border-radius: 12px;
+    }
+
+    .page-bottom-waves {
+        height: 30dvh;
+    }
+
+    .ring-group-1 {
+        opacity: 0.15 !important;
+    }
+
+    .ring-group-2,
+    .ring-group-3,
+    .ring-group-4,
+    .ring-group-5,
+    .ring-group-7 {
+        display: none !important;
+    }
+
+    .ring-group-6 {
+        opacity: 0.05 !important;
+    }
+}
+
+/* Compact devices adjustments */
+@media (max-width: 400px) {
+    .main-container {
+        padding: 30px 15px;
+        gap: 8px;
+    }
+    .profile-name {
+        font-size: 26px;
+    }
+    .photo-card {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .about-card {
+        padding: 8px 12px;
+    }
+    .about-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    a.contact-row, div.contact-row {
+        padding: 1px 0;
+    }
+    .contact-text {
+        font-size: 0.85rem;
+    }
+    .action-buttons-group {
+        gap: 8px;
+        margin-top: 4px;
+    }
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.92rem;
+        border-radius: 10px;
+    }
+}
+
+
+/* ==========================================================================
+   PREMIUM EXECUTIVE BACKGROUND STYLING (TRAVELPORT SAND & DARK OBSIDIAN)
+   ========================================================================== */
+body.theme-travelport {
+  --primary: #f7e4cb;
+  --primary-dark: #e8d0b0;
+  --bg-dark: #060a10;
+  --bg-card: rgba(10, 18, 28, 0.75);
+  --text-main: #f7e4cb;
+  --text-muted: #d4c8b8;
+  --border-glass: rgba(247, 228, 203, 0.18);
+  --accent: #f7e4cb;
+  --accent-coral: #ff5e6f;
+  
+  background-color: #060a10 !important;
+  color: #f7e4cb;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(247, 228, 203, 0.15), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 94, 111, 0.12), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(10, 18, 28, 0.4), #060a10 85%) !important;
+  background-attachment: fixed !important;
+}
+
+.bg-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(rgba(247, 228, 203, 0.1) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.6;
+}
+
+.bg-orb-1 {
+  position: fixed;
+  top: -10vw;
+  right: -5vw;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(247, 228, 203, 0.18) 0%, rgba(247, 228, 203, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-orb-2 {
+  position: fixed;
+  bottom: -10vw;
+  left: -5vw;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 94, 111, 0.14) 0%, rgba(255, 94, 111, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.theme-travelport .bg-curve {
+  position: fixed;
+  top: -10vh;
+  right: -10vw;
+  width: 65vw;
+  height: 120vh;
+  background: linear-gradient(135deg, rgba(247, 228, 203, 0.1) 0%, rgba(6, 10, 16, 0) 80%);
+  border-left: 2px solid rgba(247, 228, 203, 0.35);
+  border-radius: 50% 0 0 50%;
+  box-shadow: -20px 0 60px rgba(247, 228, 203, 0.25), inset 15px 0 40px rgba(247, 228, 203, 0.08);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-curve-secondary {
+  position: fixed;
+  bottom: -15vh;
+  left: -12vw;
+  width: 55vw;
+  height: 90vh;
+  background: linear-gradient(315deg, rgba(255, 94, 111, 0.06) 0%, rgba(6, 10, 16, 0) 80%);
+  border-right: 2px solid rgba(255, 94, 111, 0.22);
+  border-radius: 0 50% 50% 0;
+  box-shadow: 20px 0 60px rgba(255, 94, 111, 0.15);
+  z-index: -1;
+  pointer-events: none;
+}

@@ -57,13 +57,22 @@ export default function AboutLeadership() {
 
         {/* Meet Our Founders with PROMINENT Real Photos */}
         <div className="space-y-10">
-          <div className="text-center max-w-2xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
               Meet the Founders & Leadership
             </h3>
-            <p className="text-slate-600 text-sm mt-1.5">
+            <p className="text-slate-600 text-sm">
               Guiding 1,500+ enterprises worldwide with disciplined software engineering.
             </p>
+            <div className="pt-1">
+              <a
+                href="/staff/"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#b71919] hover:text-[#991616] bg-red-50 border border-red-200 px-3 py-1 rounded-full transition-colors"
+              >
+                <span>Browse Digital Staff Cards</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -100,9 +109,17 @@ export default function AboutLeadership() {
                   </div>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span>Executive Director</span>
-                  <span className="text-[#b71919] font-bold">ONFLAP Team</span>
+                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-slate-500">Executive Director</span>
+                  <a
+                    href={leader.cardUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#b71919] font-bold hover:underline"
+                    title={`View ${leader.name}'s Digital Business Card`}
+                  >
+                    Digital Card ↗
+                  </a>
                 </div>
               </div>
             ))}
