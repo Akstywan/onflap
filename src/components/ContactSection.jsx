@@ -7,7 +7,8 @@ import {
   ShieldCheck, 
   Clock, 
   MessageSquare, 
-  Sparkles 
+  Sparkles,
+  Loader2
 } from 'lucide-react';
 
 export default function ContactSection() {
@@ -22,10 +23,41 @@ export default function ContactSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [botField, setBotField] = useState('');
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (botField) {
+      setSubmitted(true);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        ...formData
+      })
+    })
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Netlify form submission error:', error);
+        setIsSubmitting(false);
+        setSubmitted(true);
+      });
   };
 
   return (
@@ -134,7 +166,28 @@ export default function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form 
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true" 
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit} 
+                  className="space-y-5"
+                >
+                  {/* Netlify Hidden Inputs */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden" aria-hidden="true">
+                    <label>
+                      Don’t fill this out if you're human: 
+                      <input 
+                        name="bot-field" 
+                        tabIndex="-1" 
+                        value={botField} 
+                        onChange={(e) => setBotField(e.target.value)} 
+                      />
+                    </label>
+                  </p>
+
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                     <h3 className="text-xl font-bold text-slate-900">
                       Request Consultation & Custom Demo
@@ -149,6 +202,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -163,6 +217,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -179,6 +234,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="text"
+                        name="company"
                         required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -193,6 +249,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="tel"
+                        name="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+1 (555) 000-0000"
@@ -207,6 +264,7 @@ export default function ContactSection() {
                         Nearest Regional Hub
                       </label>
                       <select
+                        name="region"
                         value={formData.region}
                         onChange={(e) => setFormData({ ...formData, region: e.target.value })}
                         className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#b71919]"
@@ -223,6 +281,7 @@ export default function ContactSection() {
                         Primary System of Interest
                       </label>
                       <select
+                        name="productInterest"
                         value={formData.productInterest}
                         onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
                         className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#b71919]"
@@ -246,6 +305,7 @@ export default function ContactSection() {
                     </label>
                     <textarea
                       rows={3}
+                      name="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your existing stack, team size, timeline, or key bottlenecks..."
@@ -255,10 +315,20 @@ export default function ContactSection() {
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-[#b71919] hover:bg-[#991313] text-white font-semibold text-sm shadow-lg shadow-red-900/25 hover:shadow-red-900/35 transition-all flex items-center justify-center gap-2 group active:scale-[0.99]"
+                    disabled={isSubmitting}
+                    className="w-full py-4 rounded-xl bg-[#b71919] hover:bg-[#991313] disabled:opacity-75 disabled:cursor-not-allowed text-white font-semibold text-sm shadow-lg shadow-red-900/25 hover:shadow-red-900/35 transition-all flex items-center justify-center gap-2 group active:scale-[0.99]"
                   >
-                    <span>Submit Consultation Request</span>
-                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending Request...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Consultation Request</span>
+                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
 
                   <p className="text-[11px] text-slate-500 text-center font-mono">
