@@ -145,9 +145,10 @@ function setLanguage(lang, smooth = true) {
 
         const phoneSpan = document.querySelector('.contact-row[href^="tel:"] .contact-text');
         const memberPhone = document.body.getAttribute('data-phone') || '';
+        const displayPhone = document.body.getAttribute('data-phone-display');
         if (phoneSpan && memberPhone) {
             phoneSpan.setAttribute('dir', 'ltr');
-            phoneSpan.textContent = memberPhone.replace(/(\+\d{2})(\d{5})(\d{5})/, '$1 $2 $3');
+            phoneSpan.textContent = displayPhone || memberPhone.replace(/(\+\d{2})(\d{5})(\d{5})/, '$1 $2 $3');
         }
 
     };
